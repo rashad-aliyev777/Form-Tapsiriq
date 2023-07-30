@@ -49,5 +49,19 @@ function parolunYoxlanmasi(parol) {
     : sehviGoster(parol,"Minimum 6 maksimum 15 hərf, 1 böyük hərf və 1 bu işarələrdən istifadə edilməlidir (\,~*-+/)")
 }
 
-sehviGoster(username,email,parol)
-duzuGoster(username,email,parol)
+
+function hamisi(inputlar) {
+    inputlar.forEach(function(birInput) {
+        birInput.value === "" ? sehviGoster(birInput, `${inputlar.id}`) : sehviGoster(inputlar)
+    });    
+}
+
+console.log(inputlar);
+
+
+formDiv.addEventListener("sumbit", function(e) {
+    e.preventDefault()
+    loginYoxlanmasi(username)
+    emailinYoxlanmasi(email)
+    parolunYoxlanmasi(password)
+})
